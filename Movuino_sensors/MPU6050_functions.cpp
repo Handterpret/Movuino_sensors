@@ -26,7 +26,6 @@ volatile bool mpuInterrupt = false;
 void dmpDataReady() {
     mpuInterrupt = true;
 }
-
 MPU6050 mpu_init(MPU6050 mpu) {
     // join I2C bus (I2Cdev library doesn't do this automatically)
     #if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
@@ -51,7 +50,7 @@ MPU6050 mpu_init(MPU6050 mpu) {
     // initialize device
     Serial.println(F("Initializing I2C devices..."));
     mpu.initialize();
-    
+
     // verify connection
     Serial.println(F("Testing device connections..."));
     Serial.println(mpu.testConnection() ? F("MPU6050 connection successful") : F("MPU6050 connection failed"));

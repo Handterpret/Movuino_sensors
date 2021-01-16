@@ -31,14 +31,15 @@ Handterpret htp;
 
 void setup() {
     mpu = mpu_init(mpu);
+    htp.StartTime = millis();
 }
 
 void loop() {
     float *p = get_mpu_data(mpu);
     if(p != NULL)
-      htp.update_metrics(p);
+      htp.update(p);
 
-    htp.display_metrics();
+    //htp.display_metrics();
 
-    delay(20);
+    delay(htp.PERIOD_DURATION/htp.HISTORY_SIZE);
 }
