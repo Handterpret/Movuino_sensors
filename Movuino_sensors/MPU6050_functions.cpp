@@ -104,7 +104,7 @@ float * get_mpu_data(MPU6050 mpu) {
 bool check_packet(MPU6050 mpu) {
 // if programming failed, don't try to do anything
     if (!dmpReady) {
-      Serial.println("Error throughout MPU6250 setup");
+      Serial.println("Error throughout MPU6050 setup");
       exit(0);
     }
 
@@ -153,19 +153,5 @@ float * get_metrics(MPU6050 mpu) {
     metrics[3] = euler[0] * 180/M_PI;
     metrics[4] = euler[1] * 180/M_PI;
     metrics[5] = euler[2] * 180/M_PI;
-    /*
-    Serial.print("areal\t");
-    Serial.print(aaReal.x);
-    Serial.print("\t");
-    Serial.print(aaReal.y);
-    Serial.print("\t");
-    Serial.println(aaReal.z);
-
-    Serial.print("euler\t");
-    Serial.print(euler[0] * 180/M_PI);
-    Serial.print("\t");
-    Serial.print(euler[1] * 180/M_PI);
-    Serial.print("\t");
-    Serial.println(euler[2] * 180/M_PI);*/
     return metrics;
 }
