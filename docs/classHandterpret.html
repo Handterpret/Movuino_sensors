@@ -65,6 +65,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classHandterpret-members.html">List of all members</a>  </div>
@@ -98,29 +99,36 @@ Public Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#ab23f5886f6ca28a248d1612ec79b4f94">display_metrics</a> ()</td></tr>
 <tr class="memdesc:ab23f5886f6ca28a248d1612ec79b4f94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display Accelerometer and Gyroscope values. <br /></td></tr>
 <tr class="separator:ab23f5886f6ca28a248d1612ec79b4f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac65eced1ac6e727da9c64c258403b542"><td class="memItemLeft" align="right" valign="top"><a id="ac65eced1ac6e727da9c64c258403b542"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#ac65eced1ac6e727da9c64c258403b542">display_speeds</a> ()</td></tr>
+<tr class="memdesc:ac65eced1ac6e727da9c64c258403b542"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display translation speeds detected each period. <br /></td></tr>
+<tr class="separator:ac65eced1ac6e727da9c64c258403b542"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a73f2902efac89763a2dae236d2ddc4cb"><td class="memItemLeft" align="right" valign="top"><a id="a73f2902efac89763a2dae236d2ddc4cb"></a>
-const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#a73f2902efac89763a2dae236d2ddc4cb">HISTORY_SIZE</a> = 20</td></tr>
-<tr class="memdesc:a73f2902efac89763a2dae236d2ddc4cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of measures stored per period. <br /></td></tr>
-<tr class="separator:a73f2902efac89763a2dae236d2ddc4cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0bc3d2d2e59b0e1853159dad10a3e80"><td class="memItemLeft" align="right" valign="top"><a id="ad0bc3d2d2e59b0e1853159dad10a3e80"></a>
-const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#ad0bc3d2d2e59b0e1853159dad10a3e80">PERIOD_DURATION</a> = 100</td></tr>
-<tr class="memdesc:ad0bc3d2d2e59b0e1853159dad10a3e80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time in ms, each period : rotation and translation status update. <br /></td></tr>
-<tr class="separator:ad0bc3d2d2e59b0e1853159dad10a3e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a238de6937077f938a674b69d2d9dda43"><td class="memItemLeft" align="right" valign="top"><a id="a238de6937077f938a674b69d2d9dda43"></a>
-const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#a238de6937077f938a674b69d2d9dda43">ROTATION_SENSIBILITY</a> = 35</td></tr>
-<tr class="memdesc:a238de6937077f938a674b69d2d9dda43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotation differentiel which define rotation movement. <br /></td></tr>
-<tr class="separator:a238de6937077f938a674b69d2d9dda43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a06a0d1e8172ffd901bbd1d191220904a"><td class="memItemLeft" align="right" valign="top"><a id="a06a0d1e8172ffd901bbd1d191220904a"></a>
-const uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#a06a0d1e8172ffd901bbd1d191220904a">ACCELERATION_SENSIBILITY</a> = 2000</td></tr>
-<tr class="memdesc:a06a0d1e8172ffd901bbd1d191220904a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acceleration differentiel which define translation movement. <br /></td></tr>
-<tr class="separator:a06a0d1e8172ffd901bbd1d191220904a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedea1d0cae0e1b512654f3e28fa26810"><td class="memItemLeft" align="right" valign="top"><a id="aedea1d0cae0e1b512654f3e28fa26810"></a>
 unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#aedea1d0cae0e1b512654f3e28fa26810">StartTime</a></td></tr>
 <tr class="memdesc:aedea1d0cae0e1b512654f3e28fa26810"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time in ms, monitor time between each period. <br /></td></tr>
 <tr class="separator:aedea1d0cae0e1b512654f3e28fa26810"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:ae33f0b4c0f55855624aeef3ad1ffc958"><td class="memItemLeft" align="right" valign="top"><a id="ae33f0b4c0f55855624aeef3ad1ffc958"></a>
+static const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#ae33f0b4c0f55855624aeef3ad1ffc958">MEASURES_PER_PERIOD</a> = 20</td></tr>
+<tr class="memdesc:ae33f0b4c0f55855624aeef3ad1ffc958"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of measures harvested per period. <br /></td></tr>
+<tr class="separator:ae33f0b4c0f55855624aeef3ad1ffc958"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0bc3d2d2e59b0e1853159dad10a3e80"><td class="memItemLeft" align="right" valign="top"><a id="ad0bc3d2d2e59b0e1853159dad10a3e80"></a>
+static const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#ad0bc3d2d2e59b0e1853159dad10a3e80">PERIOD_DURATION</a> = 100</td></tr>
+<tr class="memdesc:ad0bc3d2d2e59b0e1853159dad10a3e80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time in ms, each period : rotation and translation status update. <br /></td></tr>
+<tr class="separator:ad0bc3d2d2e59b0e1853159dad10a3e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a238de6937077f938a674b69d2d9dda43"><td class="memItemLeft" align="right" valign="top"><a id="a238de6937077f938a674b69d2d9dda43"></a>
+static const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#a238de6937077f938a674b69d2d9dda43">ROTATION_SENSIBILITY</a> = 35</td></tr>
+<tr class="memdesc:a238de6937077f938a674b69d2d9dda43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotation differentiel which define rotation movement. <br /></td></tr>
+<tr class="separator:a238de6937077f938a674b69d2d9dda43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06a0d1e8172ffd901bbd1d191220904a"><td class="memItemLeft" align="right" valign="top"><a id="a06a0d1e8172ffd901bbd1d191220904a"></a>
+static const uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#a06a0d1e8172ffd901bbd1d191220904a">ACCELERATION_SENSIBILITY</a> = 2000</td></tr>
+<tr class="memdesc:a06a0d1e8172ffd901bbd1d191220904a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acceleration differentiel which define translation movement. <br /></td></tr>
+<tr class="separator:a06a0d1e8172ffd901bbd1d191220904a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -133,18 +141,24 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a7d6ab3fe072af42573e0c720698e90ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#a7d6ab3fe072af42573e0c720698e90ae">check_movement</a> ()</td></tr>
 <tr class="memdesc:a7d6ab3fe072af42573e0c720698e90ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update rot and trans status and display when movement is detected.  <a href="classHandterpret.html#a7d6ab3fe072af42573e0c720698e90ae">More...</a><br /></td></tr>
 <tr class="separator:a7d6ab3fe072af42573e0c720698e90ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3ee9fb1d50515a2f69df370a19a65a7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#ac3ee9fb1d50515a2f69df370a19a65a7">average_historic</a> (float hist[<a class="el" href="classHandterpret.html#a73f2902efac89763a2dae236d2ddc4cb">HISTORY_SIZE</a>])</td></tr>
-<tr class="memdesc:ac3ee9fb1d50515a2f69df370a19a65a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the average of last period measured values.  <a href="classHandterpret.html#ac3ee9fb1d50515a2f69df370a19a65a7">More...</a><br /></td></tr>
-<tr class="separator:ac3ee9fb1d50515a2f69df370a19a65a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf568c1261df41ccfb316fb93efdac3f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#aaf568c1261df41ccfb316fb93efdac3f">average_historic</a> (float hist)</td></tr>
+<tr class="memdesc:aaf568c1261df41ccfb316fb93efdac3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the average of last period measured values.  <a href="classHandterpret.html#aaf568c1261df41ccfb316fb93efdac3f">More...</a><br /></td></tr>
+<tr class="separator:aaf568c1261df41ccfb316fb93efdac3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86e58c8c47a1ed99a2a34a5d95a084d5"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#a86e58c8c47a1ed99a2a34a5d95a084d5">detect_rotation_mov</a> (float av_gyro, float prev_av_gyro)</td></tr>
 <tr class="memdesc:a86e58c8c47a1ed99a2a34a5d95a084d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine what is the actual state of the rotation movement.  <a href="classHandterpret.html#a86e58c8c47a1ed99a2a34a5d95a084d5">More...</a><br /></td></tr>
 <tr class="separator:a86e58c8c47a1ed99a2a34a5d95a084d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afba68925a92f3c97b0bbbdf181d4a256"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#afba68925a92f3c97b0bbbdf181d4a256">detect_translation_mov</a> (int16_t acc_val)</td></tr>
-<tr class="memdesc:afba68925a92f3c97b0bbbdf181d4a256"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if there is a translation movement.  <a href="classHandterpret.html#afba68925a92f3c97b0bbbdf181d4a256">More...</a><br /></td></tr>
-<tr class="separator:afba68925a92f3c97b0bbbdf181d4a256"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac503ab7baf42f0dc082e95047e7d6cab"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#ac503ab7baf42f0dc082e95047e7d6cab">detect_translation_mov</a> (float speed)</td></tr>
+<tr class="memdesc:ac503ab7baf42f0dc082e95047e7d6cab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if there is a translation movement.  <a href="classHandterpret.html#ac503ab7baf42f0dc082e95047e7d6cab">More...</a><br /></td></tr>
+<tr class="separator:ac503ab7baf42f0dc082e95047e7d6cab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6134318d863936b27376ff7cdb02b4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#aa6134318d863936b27376ff7cdb02b4c">discrimine_rotation</a> (byte current_rot_state[3])</td></tr>
 <tr class="memdesc:aa6134318d863936b27376ff7cdb02b4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine the most likely movement made.  <a href="classHandterpret.html#aa6134318d863936b27376ff7cdb02b4c">More...</a><br /></td></tr>
 <tr class="separator:aa6134318d863936b27376ff7cdb02b4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8389689ecee57643274647345df4f694"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#a8389689ecee57643274647345df4f694">filter_acc</a> (int16_t acc)</td></tr>
+<tr class="memdesc:a8389689ecee57643274647345df4f694"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an acc value if it is greater (or lower) than (-) <code>ACCELERATION_SENSIBILITY</code>.  <a href="classHandterpret.html#a8389689ecee57643274647345df4f694">More...</a><br /></td></tr>
+<tr class="separator:a8389689ecee57643274647345df4f694"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22834ffff6bf9aca33d9aedaa91bfe87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#a22834ffff6bf9aca33d9aedaa91bfe87">find_tranlation_movement</a> (byte current_trans_state, byte post_trans_state, byte axis)</td></tr>
+<tr class="memdesc:a22834ffff6bf9aca33d9aedaa91bfe87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detect if a translation movement really happened.  <a href="classHandterpret.html#a22834ffff6bf9aca33d9aedaa91bfe87">More...</a><br /></td></tr>
+<tr class="separator:a22834ffff6bf9aca33d9aedaa91bfe87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -156,10 +170,14 @@ int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#a30ea45664c43d25a528ab63c8f5f9eec">Gyro</a> [3]</td></tr>
 <tr class="memdesc:a30ea45664c43d25a528ab63c8f5f9eec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gyroscope values, axis = 0:x, 1:y, 2:z. <br /></td></tr>
 <tr class="separator:a30ea45664c43d25a528ab63c8f5f9eec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac465652afbb84f214ddceabfe3f46501"><td class="memItemLeft" align="right" valign="top"><a id="ac465652afbb84f214ddceabfe3f46501"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#ac465652afbb84f214ddceabfe3f46501">hist_Gyro</a> [3][<a class="el" href="classHandterpret.html#a73f2902efac89763a2dae236d2ddc4cb">HISTORY_SIZE</a>]</td></tr>
-<tr class="memdesc:ac465652afbb84f214ddceabfe3f46501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store period rotation measures. <br /></td></tr>
-<tr class="separator:ac465652afbb84f214ddceabfe3f46501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af99c36568c3dc5e8e381e5ec6d128fee"><td class="memItemLeft" align="right" valign="top"><a id="af99c36568c3dc5e8e381e5ec6d128fee"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#af99c36568c3dc5e8e381e5ec6d128fee">hist_Gyro</a> [3]</td></tr>
+<tr class="memdesc:af99c36568c3dc5e8e381e5ec6d128fee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store period rotation measures. <br /></td></tr>
+<tr class="separator:af99c36568c3dc5e8e381e5ec6d128fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d65abe0c65865edcca38a3322e67c95"><td class="memItemLeft" align="right" valign="top"><a id="a9d65abe0c65865edcca38a3322e67c95"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#a9d65abe0c65865edcca38a3322e67c95">trans_speed</a> [3]</td></tr>
+<tr class="memdesc:a9d65abe0c65865edcca38a3322e67c95"><td class="mdescLeft">&#160;</td><td class="mdescRight">store speed calculated for each period per axis <br /></td></tr>
+<tr class="separator:a9d65abe0c65865edcca38a3322e67c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a289ef8fd0b450eb0e2864661980542db"><td class="memItemLeft" align="right" valign="top"><a id="a289ef8fd0b450eb0e2864661980542db"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#a289ef8fd0b450eb0e2864661980542db">prev_av_Gyro</a> [3]</td></tr>
 <tr class="memdesc:a289ef8fd0b450eb0e2864661980542db"><td class="mdescLeft">&#160;</td><td class="mdescRight">store previous average gyroscope <br /></td></tr>
@@ -172,17 +190,17 @@ byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#a7ac8a398707ef0cbb11109ad5aa0b51d">trans_state</a> [3]</td></tr>
 <tr class="memdesc:a7ac8a398707ef0cbb11109ad5aa0b51d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translation state, 0 = not moving, 1 = negative translation; 2 = positive translation. <br /></td></tr>
 <tr class="separator:a7ac8a398707ef0cbb11109ad5aa0b51d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6aace86f2c2b3f3d002da562f836d755"><td class="memItemLeft" align="right" valign="top"><a id="a6aace86f2c2b3f3d002da562f836d755"></a>
-byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#a6aace86f2c2b3f3d002da562f836d755">hist_index</a></td></tr>
-<tr class="memdesc:a6aace86f2c2b3f3d002da562f836d755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the current position in the hist_gyro array. <br /></td></tr>
-<tr class="separator:a6aace86f2c2b3f3d002da562f836d755"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5adf916cb1c47f7144cd5c4164697b26"><td class="memItemLeft" align="right" valign="top"><a id="a5adf916cb1c47f7144cd5c4164697b26"></a>
+byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#a5adf916cb1c47f7144cd5c4164697b26">measure_index</a></td></tr>
+<tr class="memdesc:a5adf916cb1c47f7144cd5c4164697b26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Index of the current number of measures harvested array. <br /></td></tr>
+<tr class="separator:a5adf916cb1c47f7144cd5c4164697b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classHandterpret.html" title="Handterpret class.">Handterpret</a> class. </p>
 <p>This class stores MPU sensor values. It aims to process these metrics to detect forearm movements. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac3ee9fb1d50515a2f69df370a19a65a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3ee9fb1d50515a2f69df370a19a65a7">&#9670;&nbsp;</a></span>average_historic()</h2>
+<a id="aaf568c1261df41ccfb316fb93efdac3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf568c1261df41ccfb316fb93efdac3f">&#9670;&nbsp;</a></span>average_historic()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,7 +212,7 @@ byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="memname">float Handterpret::average_historic </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>hist</em>[HISTORY_SIZE]</td><td>)</td>
+          <td class="paramname"><em>hist</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -206,9 +224,12 @@ byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Compute the average of last period measured values. </p>
-<ul>
-<li>hist 1d array of sensor values </li>
-</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hist</td><td>1d array of sensor values </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -275,15 +296,18 @@ byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Determine what is the actual state of the rotation movement. </p>
-<p>Compare previous and current average for one gyroscope axis. If it exceeds defined threshold ROTATION_SENSIBILITY it returns 1 for a negative rotation, 2 for a positive rotation. </p><ul>
-<li>av_gyro for the current period : average gyroscope value </li>
-<li>prev_av_gyro for the last period : average gyroscope value </li>
-</ul>
+<p>Compare previous and current average for one gyroscope axis. If it exceeds defined threshold ROTATION_SENSIBILITY it returns 1 for a negative rotation, 2 for a positive rotation. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">av_gyro</td><td>for the current period : average gyroscope value </td></tr>
+    <tr><td class="paramname">prev_av_gyro</td><td>for the last period : average gyroscope value </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="afba68925a92f3c97b0bbbdf181d4a256"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afba68925a92f3c97b0bbbdf181d4a256">&#9670;&nbsp;</a></span>detect_translation_mov()</h2>
+<a id="ac503ab7baf42f0dc082e95047e7d6cab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac503ab7baf42f0dc082e95047e7d6cab">&#9670;&nbsp;</a></span>detect_translation_mov()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -294,8 +318,8 @@ byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         <tr>
           <td class="memname">byte Handterpret::detect_translation_mov </td>
           <td>(</td>
-          <td class="paramtype">int16_t&#160;</td>
-          <td class="paramname"><em>acc_val</em></td><td>)</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>speed</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -307,9 +331,12 @@ byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Determine if there is a translation movement. </p>
-<p>Detect if <code>acc_val</code> exceeds ACCELERATION_SENSIBILITY for one accelerometer axis. It returns 1 for a negative translation, 2 for a positive translation. </p><ul>
-<li>acc_val current accelaration value </li>
-</ul>
+<p>Detect if <code>acc_val</code> exceeds ACCELERATION_SENSIBILITY for one accelerometer axis. It returns 1 for a negative translation, 2 for a positive translation. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">acc_val</td><td>current accelaration value </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -338,9 +365,99 @@ byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Determine the most likely movement made. </p>
-<p>Due to physical restriction and sensor noise, the movement made is not always easy to determine. Some movements (especially flexion and extension) triggers sometimes multiple axis. This function prioritize some of the axis , order was was done empirically. Order : supination/pronation &gt; flexion/extension &gt; adduction/abduction </p><ul>
-<li>current_rot_state array of current rotation status </li>
-</ul>
+<p>Due to physical restriction and sensor noise, the movement made is not always easy to determine. Some movements (especially flexion and extension) triggers sometimes multiple axis. This function prioritize some of the axis , order was was done empirically. Order : supination/pronation &gt; flexion/extension &gt; adduction/abduction </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">current_rot_state</td><td>array of current rotation status </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8389689ecee57643274647345df4f694"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8389689ecee57643274647345df4f694">&#9670;&nbsp;</a></span>filter_acc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t Handterpret::filter_acc </td>
+          <td>(</td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>acc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return an acc value if it is greater (or lower) than (-) <code>ACCELERATION_SENSIBILITY</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">acc</td><td>raw accelerometer value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>filtered value (0 or acc) </dd></dl>
+
+</div>
+</div>
+<a id="a22834ffff6bf9aca33d9aedaa91bfe87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22834ffff6bf9aca33d9aedaa91bfe87">&#9670;&nbsp;</a></span>find_tranlation_movement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Handterpret::find_tranlation_movement </td>
+          <td>(</td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>current_trans_state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>post_trans_state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>axis</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Detect if a translation movement really happened. </p>
+<p>A "real" translation movement is defined here as a acceleration measure followed by a decceleration measure. The function aims to detect the transition between those states two, and print then the appropriate translation movement </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">current_trans_state</td><td>the current state of the translation </td></tr>
+    <tr><td class="paramname">post_trans_state</td><td>the state measured at the last period </td></tr>
+    <tr><td class="paramname">axis</td><td>the translation axis </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -405,10 +522,13 @@ byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Display detected rotation movement (exemple : supination, extension...) </p>
-<ul>
-<li>rot Rotation state </li>
-<li>axis = 0:x, 1:y, 2:z </li>
-</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rot</td><td>Rotation state </td></tr>
+    <tr><td class="paramname">axis</td><td>= 0:x, 1:y, 2:z </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -447,10 +567,13 @@ byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Display detected translation movement (exemple : forward, left...) </p>
-<ul>
-<li>acc Acceleration state </li>
-<li>axis = 0:x, 1:y, 2:z </li>
-</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">acc</td><td>Acceleration state </td></tr>
+    <tr><td class="paramname">axis</td><td>= 0:x, 1:y, 2:z </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

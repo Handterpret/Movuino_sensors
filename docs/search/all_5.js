@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['mpu6050_5ffunctions_2eh_18',['MPU6050_functions.h',['../MPU6050__functions_8h.html',1,'']]],
-  ['mpu_5finit_19',['mpu_init',['../MPU6050__functions_8h.html#a60210b3b2854af4b7da8c2949068e6a9',1,'MPU6050_functions.cpp']]]
+  ['handterpret_16',['Handterpret',['../classHandterpret.html',1,'Handterpret'],['../classHandterpret.html#a451f49b98f6aa61da29d52abaa7734d7',1,'Handterpret::Handterpret()']]],
+  ['handterpret_2eh_17',['Handterpret.h',['../Handterpret_8h.html',1,'']]],
+  ['hist_5fgyro_18',['hist_Gyro',['../classHandterpret.html#af99c36568c3dc5e8e381e5ec6d128fee',1,'Handterpret']]]
 ];

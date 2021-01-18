@@ -3,18 +3,17 @@
 //default constructor
 Handterpret::Handterpret()
 {
-    hist_index = 0;
+    measure_index = 0;
     for(int i = 0; i < 3; i++) {
         Acc[i] = 0;
         Gyro[i] = 0;
         prev_av_Gyro[i] = 0;
         rot_state[i] = 0;
         trans_state[i] = 0;
-        for(int j = 0; j < 20; j++) {
-            hist_Gyro[i][j] = 0;
-            hist_Gyro[i][j] = 0;
-            hist_Gyro[i][j] = 0;
-        }
+        trans_speed[i] = 0;
+        hist_Gyro[i] = 0;
+        hist_Gyro[i] = 0;
+        hist_Gyro[i] = 0;
     }
 }
 
@@ -31,15 +30,20 @@ void Handterpret::update(float metrics[6]) {
     for(int i = 0; i < 3; i++) {
         Acc[i] = metrics[i];
         Gyro[i] = metrics[3+i];
-        hist_Gyro[i][hist_index] = metrics[3+i];
+        hist_Gyro[i] += metrics[3+i];
+        trans_speed[i] += filter_acc(metrics[i]);
     }
-    hist_index++;
-    if (hist_index == HISTORY_SIZE) {
+    measure_index++;
+    if (measure_index == MEASURES_PER_PERIOD) {
         unsigned long CurrentTime = millis();
         unsigned long ElapsedTime = CurrentTime - StartTime;
-        //Serial.print("Time elapsed ");Serial.println(ElapsedTime/1000);
+        //Serial.print("Time elapsed ");Serial.println(ElapsedTime);
         check_movement();
-        hist_index = 0;
+        measure_index = 0;
+        //reset each period because of Accelerometers noise
+        for(int i = 0; i < 3; i++) {
+            trans_speed[i] = 0;
+        }
     }
 }
 void Handterpret::check_movement() {
@@ -49,16 +53,21 @@ void Handterpret::check_movement() {
     for(int i = 0; i < 3; i++) {
         av_Gyro[i] = average_historic(hist_Gyro[i]);
         current_rot_state[i] = detect_rotation_mov(av_Gyro[i], prev_av_Gyro[i]);
-        current_trans_state[i] = detect_translation_mov(Acc[i]);
-        print_translation(current_trans_state[i], i);
-        //Serial.print(" ");Serial.print(current_rot_state[i]);
+        current_trans_state[i] = detect_translation_mov(trans_speed[i]);
+        find_tranlation_movement(current_trans_state[i], trans_state[i], i);
     }
-    Serial.println();
     discrimine_rotation(current_rot_state);
+    // store new average rotation, rotation and translation status
     for(int i = 0; i < 3; i++) {
         rot_state[i] = current_rot_state[i];
         prev_av_Gyro[i] = av_Gyro[i];
+        trans_state[i] = current_trans_state[i];
     }
+}
+int16_t Handterpret::filter_acc(int16_t acc) {
+    if (acc > ACCELERATION_SENSIBILITY || acc < -ACCELERATION_SENSIBILITY)
+        return acc;
+    else return 0;
 }
 void Handterpret::discrimine_rotation(byte current_rot_state[3]) {
     if (current_rot_state[1] != rot_state[1]) {
@@ -69,6 +78,15 @@ void Handterpret::discrimine_rotation(byte current_rot_state[3]) {
     }
     else if (current_rot_state[0] != rot_state[0]) {
             print_rotation(rot_state[0], 0);
+    }
+}
+void Handterpret::find_tranlation_movement(byte current_trans_state, byte post_trans_state, byte axis) {
+    if (current_trans_state != post_trans_state) {
+        if (current_trans_state == 2 && post_trans_state == 1)
+            print_translation(post_trans_state, axis);
+        else if (current_trans_state == 1 && post_trans_state == 2) {
+            print_translation(post_trans_state, axis);
+        }
     }
 }
 void Handterpret::print_rotation(byte rot, byte axis) {
@@ -127,7 +145,6 @@ void Handterpret::print_translation(byte acc, byte axis) {
         }
     }
 }
-
 byte Handterpret::detect_rotation_mov(float av_gyro, float prev_av_gyro) {
     if (av_gyro >= prev_av_gyro + ROTATION_SENSIBILITY) {
         /*Serial.print("Actual average : "); Serial.println(av_gyro);
@@ -143,21 +160,17 @@ byte Handterpret::detect_rotation_mov(float av_gyro, float prev_av_gyro) {
     }
     else return 0;
 }
-byte Handterpret::detect_translation_mov(int16_t acc_val) {
-    if (acc_val >= ACCELERATION_SENSIBILITY) {
+byte Handterpret::detect_translation_mov(float speed) {
+    if (speed > 0) {
         return 2;
     }
-    else if (acc_val <= -ACCELERATION_SENSIBILITY) {
+    else if (speed < 0) {
        return 1;
     }
     else return 0;
 }
-float Handterpret::average_historic(float hist[HISTORY_SIZE]) {
-    float sum = 0.;
-    for (int i = 0 ; i < HISTORY_SIZE; i++) {
-        sum += hist[i];
-    }
-    return sum/HISTORY_SIZE;
+float Handterpret::average_historic(float hist) {
+    return hist/MEASURES_PER_PERIOD;
 }
 void Handterpret::display_metrics() {
     //special value of tab to match all different consoles config for \t
@@ -169,6 +182,15 @@ void Handterpret::display_metrics() {
     Serial.print("   Gyro   ");
     for(int i = 0; i < 3; i++) {
         Serial.print(Gyro[i]);Serial.print(tab);
+    }
+    Serial.println();
+}
+void Handterpret::display_speeds() {
+    //special value of tab to match all different consoles config for \t
+    char * tab = "    ";
+    Serial.print("sensor speeds : ");
+    for(int i = 0; i < 3; i++) {
+        Serial.print(trans_speed[i]);Serial.print(tab);
     }
     Serial.println();
 }

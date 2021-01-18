@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['period_5fduration_20',['PERIOD_DURATION',['../classHandterpret.html#ad0bc3d2d2e59b0e1853159dad10a3e80',1,'Handterpret']]],
-  ['prev_5fav_5fgyro_21',['prev_av_Gyro',['../classHandterpret.html#a289ef8fd0b450eb0e2864661980542db',1,'Handterpret']]],
-  ['print_5frotation_22',['print_rotation',['../classHandterpret.html#a77ee5627d4d0f9aef66f6a835eee48e6',1,'Handterpret']]],
-  ['print_5ftranslation_23',['print_translation',['../classHandterpret.html#a79eab5184f9959909df6dd667fe485a2',1,'Handterpret']]]
+  ['measure_5findex_19',['measure_index',['../classHandterpret.html#a5adf916cb1c47f7144cd5c4164697b26',1,'Handterpret']]],
+  ['measures_5fper_5fperiod_20',['MEASURES_PER_PERIOD',['../classHandterpret.html#ae33f0b4c0f55855624aeef3ad1ffc958',1,'Handterpret']]],
+  ['mpu6050_5ffunctions_2eh_21',['MPU6050_functions.h',['../MPU6050__functions_8h.html',1,'']]],
+  ['mpu_5finit_22',['mpu_init',['../MPU6050__functions_8h.html#a60210b3b2854af4b7da8c2949068e6a9',1,'MPU6050_functions.cpp']]]
 ];

@@ -39,7 +39,5 @@ void loop() {
     if(p != NULL)
       htp.update(p);
 
-    //htp.display_metrics();
-
-    delay(htp.PERIOD_DURATION/htp.HISTORY_SIZE);
+    delay(htp.PERIOD_DURATION/htp.MEASURES_PER_PERIOD);
 }

@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['handterpret_13',['Handterpret',['../classHandterpret.html',1,'Handterpret'],['../classHandterpret.html#a451f49b98f6aa61da29d52abaa7734d7',1,'Handterpret::Handterpret()']]],
-  ['handterpret_2eh_14',['Handterpret.h',['../Handterpret_8h.html',1,'']]],
-  ['hist_5fgyro_15',['hist_Gyro',['../classHandterpret.html#ac465652afbb84f214ddceabfe3f46501',1,'Handterpret']]],
-  ['hist_5findex_16',['hist_index',['../classHandterpret.html#a6aace86f2c2b3f3d002da562f836d755',1,'Handterpret']]],
-  ['history_5fsize_17',['HISTORY_SIZE',['../classHandterpret.html#a73f2902efac89763a2dae236d2ddc4cb',1,'Handterpret']]]
+  ['get_5fmetrics_13',['get_metrics',['../classHandterpret.html#ab807d3b7273cfd6859fd9134cd2409d7',1,'Handterpret::get_metrics()'],['../MPU6050__functions_8h.html#a08773dd41e84314000f90db9120ddca8',1,'get_metrics(MPU6050 mpu):&#160;MPU6050_functions.cpp']]],
+  ['get_5fmpu_5fdata_14',['get_mpu_data',['../MPU6050__functions_8h.html#a0fb4b9d7c18808d1562d22d8f041df6e',1,'MPU6050_functions.cpp']]],
+  ['gyro_15',['Gyro',['../classHandterpret.html#a30ea45664c43d25a528ab63c8f5f9eec',1,'Handterpret']]]
 ];

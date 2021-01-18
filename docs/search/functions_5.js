@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mpu_5finit_44',['mpu_init',['../MPU6050__functions_8h.html#a60210b3b2854af4b7da8c2949068e6a9',1,'MPU6050_functions.cpp']]]
+  ['handterpret_50',['Handterpret',['../classHandterpret.html#a451f49b98f6aa61da29d52abaa7734d7',1,'Handterpret']]]
 ];

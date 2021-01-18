@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['get_5fmetrics_41',['get_metrics',['../classHandterpret.html#ab807d3b7273cfd6859fd9134cd2409d7',1,'Handterpret::get_metrics()'],['../MPU6050__functions_8h.html#a08773dd41e84314000f90db9120ddca8',1,'get_metrics(MPU6050 mpu):&#160;MPU6050_functions.cpp']]],
-  ['get_5fmpu_5fdata_42',['get_mpu_data',['../MPU6050__functions_8h.html#a0fb4b9d7c18808d1562d22d8f041df6e',1,'MPU6050_functions.cpp']]]
+  ['filter_5facc_46',['filter_acc',['../classHandterpret.html#a8389689ecee57643274647345df4f694',1,'Handterpret']]],
+  ['find_5ftranlation_5fmovement_47',['find_tranlation_movement',['../classHandterpret.html#a22834ffff6bf9aca33d9aedaa91bfe87',1,'Handterpret']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['period_5fduration_55',['PERIOD_DURATION',['../classHandterpret.html#ad0bc3d2d2e59b0e1853159dad10a3e80',1,'Handterpret']]],
-  ['prev_5fav_5fgyro_56',['prev_av_Gyro',['../classHandterpret.html#a289ef8fd0b450eb0e2864661980542db',1,'Handterpret']]]
+  ['measure_5findex_60',['measure_index',['../classHandterpret.html#a5adf916cb1c47f7144cd5c4164697b26',1,'Handterpret']]],
+  ['measures_5fper_5fperiod_61',['MEASURES_PER_PERIOD',['../classHandterpret.html#ae33f0b4c0f55855624aeef3ad1ffc958',1,'Handterpret']]]
 ];
