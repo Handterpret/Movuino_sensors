@@ -62,6 +62,7 @@ void Handterpret::check_movement() {
         rot_state[i] = current_rot_state[i];
         prev_av_Gyro[i] = av_Gyro[i];
         trans_state[i] = current_trans_state[i];
+        hist_Gyro[i] = 0;
     }
 }
 int16_t Handterpret::filter_acc(int16_t acc) {
@@ -70,15 +71,15 @@ int16_t Handterpret::filter_acc(int16_t acc) {
     else return 0;
 }
 void Handterpret::discrimine_rotation(byte current_rot_state[3]) {
-    if (current_rot_state[1] != rot_state[1]) {
+    /*if (current_rot_state[1] != rot_state[1]) {
             print_rotation(rot_state[1], 1);
-    }
-    else if (current_rot_state[2] != rot_state[2]) {
+    }*/
+    if (current_rot_state[2] != rot_state[2]) {
             print_rotation(rot_state[2], 2);
-    }
+    }/*
     else if (current_rot_state[0] != rot_state[0]) {
             print_rotation(rot_state[0], 0);
-    }
+    }*/
 }
 void Handterpret::find_tranlation_movement(byte current_trans_state, byte post_trans_state, byte axis) {
     if (current_trans_state != post_trans_state) {
@@ -96,10 +97,10 @@ void Handterpret::print_rotation(byte rot, byte axis) {
                 Serial.println("adduction detected");
                 break;
             case 1 :
-                Serial.println("supination detected");
+                Serial.println("flexion detected");
                 break;
             case 2 :
-                Serial.println("flexion detected");
+                Serial.println("supination detected");
                 break;
         }
     }
@@ -109,10 +110,10 @@ void Handterpret::print_rotation(byte rot, byte axis) {
                 Serial.println("abduction detected");
                 break;
             case 1 :
-                Serial.println("pronation detected");
+                Serial.println("extension detected");
                 break;
             case 2 :
-                Serial.println("extension detected");
+                Serial.println("pronation detected");
                 break;
         }
     }
@@ -124,7 +125,7 @@ void Handterpret::print_translation(byte acc, byte axis) {
                 Serial.println("right translation detected");
                 break;
             case 1 :
-                Serial.println("forward translation detected");
+                Serial.println("backward translation detected");
                 break;
             case 2 :
                 Serial.println("upper translation detected");
@@ -137,7 +138,7 @@ void Handterpret::print_translation(byte acc, byte axis) {
                 Serial.println("left translation detected");
                 break;
             case 1 :
-                Serial.println("backward translation detected");
+                Serial.println("forward translation detected");
                 break;
             case 2 :
                 Serial.println("lower translation detected");

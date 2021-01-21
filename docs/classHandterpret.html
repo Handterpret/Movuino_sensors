@@ -122,7 +122,7 @@ static const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 <tr class="memdesc:ad0bc3d2d2e59b0e1853159dad10a3e80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time in ms, each period : rotation and translation status update. <br /></td></tr>
 <tr class="separator:ad0bc3d2d2e59b0e1853159dad10a3e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a238de6937077f938a674b69d2d9dda43"><td class="memItemLeft" align="right" valign="top"><a id="a238de6937077f938a674b69d2d9dda43"></a>
-static const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#a238de6937077f938a674b69d2d9dda43">ROTATION_SENSIBILITY</a> = 35</td></tr>
+static const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#a238de6937077f938a674b69d2d9dda43">ROTATION_SENSIBILITY</a> = 20</td></tr>
 <tr class="memdesc:a238de6937077f938a674b69d2d9dda43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotation differentiel which define rotation movement. <br /></td></tr>
 <tr class="separator:a238de6937077f938a674b69d2d9dda43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06a0d1e8172ffd901bbd1d191220904a"><td class="memItemLeft" align="right" valign="top"><a id="a06a0d1e8172ffd901bbd1d191220904a"></a>
@@ -365,7 +365,9 @@ byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Determine the most likely movement made. </p>
-<p>Due to physical restriction and sensor noise, the movement made is not always easy to determine. Some movements (especially flexion and extension) triggers sometimes multiple axis. This function prioritize some of the axis , order was was done empirically. Order : supination/pronation &gt; flexion/extension &gt; adduction/abduction </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Due to physical restriction and sensor noise, the movement made is not always easy to determine. Some movements (especially flexion and extension) triggers sometimes multiple axis. This function prioritize some of the axis , order was was done empirically. Order : supination/pronation &gt; flexion/extension &gt; adduction/abduction<br  />
+<br  />
+NOTA BENE : Currently, as the translantion detection performance are better than the rotation detection, we only use one axis to mesure rotation of the wrist on himself. The other axis movement can be detected as translation movement. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">current_rot_state</td><td>array of current rotation status </td></tr>
   </table>

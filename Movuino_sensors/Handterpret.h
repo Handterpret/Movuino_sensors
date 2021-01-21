@@ -20,7 +20,7 @@ class Handterpret
         //! Time in ms, each period : rotation and translation status update
         static const byte PERIOD_DURATION = 100;
         //! Rotation differentiel which define rotation movement
-        static const byte ROTATION_SENSIBILITY = 35;
+        static const byte ROTATION_SENSIBILITY = 20;
         //! Acceleration differentiel which define translation movement
         static const uint16_t ACCELERATION_SENSIBILITY = 2000;
         //! Time in ms, monitor time between each period
@@ -113,7 +113,10 @@ class Handterpret
          * Due to physical restriction and sensor noise, the movement made is not always easy to determine.
          * Some movements (especially flexion and extension) triggers sometimes multiple axis.
          * This function prioritize some of the axis , order was was done empirically.
-         * Order : supination/pronation > flexion/extension > adduction/abduction
+         * Order : supination/pronation > flexion/extension > adduction/abduction\n\n
+         * NOTA BENE : Currently, as the translantion detection performance are better than the rotation detection,
+         * we only use one axis to mesure rotation of the wrist on himself. The other axis movement can be detected
+         * as translation movement.
          * @param current_rot_state array of current rotation status
          */
         void discrimine_rotation(byte current_rot_state[3]);
