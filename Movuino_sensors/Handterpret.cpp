@@ -54,9 +54,11 @@ void Handterpret::check_movement() {
         av_Gyro[i] = average_historic(hist_Gyro[i]);
         current_rot_state[i] = detect_rotation_mov(av_Gyro[i], prev_av_Gyro[i]);
         current_trans_state[i] = detect_translation_mov(trans_speed[i]);
-        find_tranlation_movement(current_trans_state[i], trans_state[i], i);
     }
-    discrimine_rotation(current_rot_state);
+    if (discrimine_rotation(current_rot_state)) {
+        for(int i = 0; i < 3; i++)
+            find_tranlation_movement(current_trans_state[i], trans_state[i], i);
+    }
     // store new average rotation, rotation and translation status
     for(int i = 0; i < 3; i++) {
         rot_state[i] = current_rot_state[i];
@@ -70,16 +72,18 @@ int16_t Handterpret::filter_acc(int16_t acc) {
         return acc;
     else return 0;
 }
-void Handterpret::discrimine_rotation(byte current_rot_state[3]) {
+bool Handterpret::discrimine_rotation(byte current_rot_state[3]) {
     /*if (current_rot_state[1] != rot_state[1]) {
             print_rotation(rot_state[1], 1);
     }*/
     if (current_rot_state[2] != rot_state[2]) {
             print_rotation(rot_state[2], 2);
+            return false;
     }/*
     else if (current_rot_state[0] != rot_state[0]) {
             print_rotation(rot_state[0], 0);
     }*/
+    else return true;
 }
 void Handterpret::find_tranlation_movement(byte current_trans_state, byte post_trans_state, byte axis) {
     if (current_trans_state != post_trans_state) {

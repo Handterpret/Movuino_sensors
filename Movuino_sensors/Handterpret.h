@@ -114,12 +114,15 @@ class Handterpret
          * Some movements (especially flexion and extension) triggers sometimes multiple axis.
          * This function prioritize some of the axis , order was was done empirically.
          * Order : supination/pronation > flexion/extension > adduction/abduction\n\n
-         * NOTA BENE : Currently, as the translantion detection performance are better than the rotation detection,
+         * NOTE : Currently, as the translantion detection performance are better than the rotation detection,
          * we only use one axis to mesure rotation of the wrist on himself. The other axis movement can be detected
          * as translation movement.
+         * Furthermore, as the rotation movement can be sometimes interpreted as a translation movement,
+         * we only check for translations if there is no rotation detected.
          * @param current_rot_state array of current rotation status
+         * @return True if no rotation is detected, else False
          */
-        void discrimine_rotation(byte current_rot_state[3]);
+        bool discrimine_rotation(byte current_rot_state[3]);
         //! Return an acc value if it is greater (or lower) than (-) `ACCELERATION_SENSIBILITY`.
         /**
          * @param acc raw accelerometer value

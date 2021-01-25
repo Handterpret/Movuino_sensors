@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Handterpret-Movuino_sensors
-   &#160;<span id="projectnumber">0.1.1</span>
+   &#160;<span id="projectnumber">0.1.2</span>
    </div>
   </td>
  </tr>
@@ -150,9 +150,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:ac503ab7baf42f0dc082e95047e7d6cab"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#ac503ab7baf42f0dc082e95047e7d6cab">detect_translation_mov</a> (float speed)</td></tr>
 <tr class="memdesc:ac503ab7baf42f0dc082e95047e7d6cab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if there is a translation movement.  <a href="classHandterpret.html#ac503ab7baf42f0dc082e95047e7d6cab">More...</a><br /></td></tr>
 <tr class="separator:ac503ab7baf42f0dc082e95047e7d6cab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6134318d863936b27376ff7cdb02b4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#aa6134318d863936b27376ff7cdb02b4c">discrimine_rotation</a> (byte current_rot_state[3])</td></tr>
-<tr class="memdesc:aa6134318d863936b27376ff7cdb02b4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine the most likely movement made.  <a href="classHandterpret.html#aa6134318d863936b27376ff7cdb02b4c">More...</a><br /></td></tr>
-<tr class="separator:aa6134318d863936b27376ff7cdb02b4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ac78f2eb10dbbe53ed562fc3655acdd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#a4ac78f2eb10dbbe53ed562fc3655acdd">discrimine_rotation</a> (byte current_rot_state[3])</td></tr>
+<tr class="memdesc:a4ac78f2eb10dbbe53ed562fc3655acdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine the most likely movement made.  <a href="classHandterpret.html#a4ac78f2eb10dbbe53ed562fc3655acdd">More...</a><br /></td></tr>
+<tr class="separator:a4ac78f2eb10dbbe53ed562fc3655acdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8389689ecee57643274647345df4f694"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHandterpret.html#a8389689ecee57643274647345df4f694">filter_acc</a> (int16_t acc)</td></tr>
 <tr class="memdesc:a8389689ecee57643274647345df4f694"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an acc value if it is greater (or lower) than (-) <code>ACCELERATION_SENSIBILITY</code>.  <a href="classHandterpret.html#a8389689ecee57643274647345df4f694">More...</a><br /></td></tr>
 <tr class="separator:a8389689ecee57643274647345df4f694"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -257,7 +257,7 @@ byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Update rot and trans status and display when movement is detected. </p>
-<p>Calculate average rotation from historic, detect if rotation and gyroscope status have significatively changed since last period and update their status. Display movement detected with <a class="el" href="classHandterpret.html#a79eab5184f9959909df6dd667fe485a2" title="Display detected translation movement (exemple : forward, left...)">print_translation()</a> and <a class="el" href="classHandterpret.html#aa6134318d863936b27376ff7cdb02b4c" title="Determine the most likely movement made.">discrimine_rotation()</a> if a movement status changed </p>
+<p>Calculate average rotation from historic, detect if rotation and gyroscope status have significatively changed since last period and update their status. Display movement detected with <a class="el" href="classHandterpret.html#a79eab5184f9959909df6dd667fe485a2" title="Display detected translation movement (exemple : forward, left...)">print_translation()</a> and <a class="el" href="classHandterpret.html#a4ac78f2eb10dbbe53ed562fc3655acdd" title="Determine the most likely movement made.">discrimine_rotation()</a> if a movement status changed </p>
 
 </div>
 </div>
@@ -331,17 +331,17 @@ byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Determine if there is a translation movement. </p>
-<p>Detect if <code>acc_val</code> exceeds ACCELERATION_SENSIBILITY for one accelerometer axis. It returns 1 for a negative translation, 2 for a positive translation. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Detect if <code>speed</code> is positive or negative for one accelerometer axis. It returns 1 for a negative translation, 2 for a positive translation. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">acc_val</td><td>current accelaration value </td></tr>
+    <tr><td class="paramname">speed</td><td>current speed value </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="aa6134318d863936b27376ff7cdb02b4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6134318d863936b27376ff7cdb02b4c">&#9670;&nbsp;</a></span>discrimine_rotation()</h2>
+<a id="a4ac78f2eb10dbbe53ed562fc3655acdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ac78f2eb10dbbe53ed562fc3655acdd">&#9670;&nbsp;</a></span>discrimine_rotation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -350,7 +350,7 @@ byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Handterpret::discrimine_rotation </td>
+          <td class="memname">bool Handterpret::discrimine_rotation </td>
           <td>(</td>
           <td class="paramtype">byte&#160;</td>
           <td class="paramname"><em>current_rot_state</em>[3]</td><td>)</td>
@@ -367,12 +367,13 @@ byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>Determine the most likely movement made. </p>
 <p>Due to physical restriction and sensor noise, the movement made is not always easy to determine. Some movements (especially flexion and extension) triggers sometimes multiple axis. This function prioritize some of the axis , order was was done empirically. Order : supination/pronation &gt; flexion/extension &gt; adduction/abduction<br  />
 <br  />
-NOTA BENE : Currently, as the translantion detection performance are better than the rotation detection, we only use one axis to mesure rotation of the wrist on himself. The other axis movement can be detected as translation movement. </p><dl class="params"><dt>Parameters</dt><dd>
+NOTE : Currently, as the translantion detection performance are better than the rotation detection, we only use one axis to mesure rotation of the wrist on himself. The other axis movement can be detected as translation movement. Furthermore, as the rotation movement can be sometimes interpreted as a translation movement, we only check for translations if there is no rotation detected. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">current_rot_state</td><td>array of current rotation status </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>True if no rotation is detected, else False </dd></dl>
 
 </div>
 </div>
