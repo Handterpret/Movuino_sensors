@@ -12,8 +12,8 @@ Handterpret::Handterpret()
         trans_state[i] = 0;
         trans_speed[i] = 0;
         hist_Gyro[i] = 0;
-        hist_Gyro[i] = 0;
-        hist_Gyro[i] = 0;
+        num_translation[i] = 0;
+        num_translation[3+i] = 0;
     }
 }
 
@@ -33,6 +33,7 @@ void Handterpret::update(float metrics[6]) {
         hist_Gyro[i] += metrics[3+i];
         trans_speed[i] += filter_acc(metrics[i]);
     }
+    //Serial.println(metrics[5]);
     measure_index++;
     if (measure_index == MEASURES_PER_PERIOD) {
         unsigned long CurrentTime = millis();
@@ -50,15 +51,20 @@ void Handterpret::check_movement() {
     float av_Gyro[3] = {0, 0, 0};
     byte current_rot_state[3] = {0, 0, 0};
     byte current_trans_state[3] = {0, 0, 0};
+    //display_metrics();
+    //Serial.print("Average : ");
     for(int i = 0; i < 3; i++) {
-        av_Gyro[i] = average_historic(hist_Gyro[i]);
-        current_rot_state[i] = detect_rotation_mov(av_Gyro[i], prev_av_Gyro[i]);
+        //av_Gyro[i] = average_historic(hist_Gyro[i]);
+        //av_Gyro[i] = filter_rot(av_Gyro[i], prev_av_Gyro[i], i);
+        //current_rot_state[i] = detect_rotation_mov(av_Gyro[i], prev_av_Gyro[i]);
         current_trans_state[i] = detect_translation_mov(trans_speed[i]);
+        find_tranlation_movement(current_trans_state[i], trans_state[i], i);
     }
-    if (discrimine_rotation(current_rot_state)) {
+    //Serial.println();
+    /*if (discrimine_rotation(current_rot_state)) {
         for(int i = 0; i < 3; i++)
             find_tranlation_movement(current_trans_state[i], trans_state[i], i);
-    }
+    }*/
     // store new average rotation, rotation and translation status
     for(int i = 0; i < 3; i++) {
         rot_state[i] = current_rot_state[i];
@@ -126,42 +132,42 @@ void Handterpret::print_translation(byte acc, byte axis) {
     if (acc == 2) {
         switch(axis) {
             case 0 :
-                Serial.println("right translation detected");
+                Serial.print(num_translation[0]);Serial.print(" ");Serial.println("left translation detected");
+                num_translation[0]+=1;
                 break;
             case 1 :
-                Serial.println("backward translation detected");
+                Serial.print(num_translation[1]);Serial.print(" ");Serial.println("backward translation detected");
+                num_translation[1]+=1;
                 break;
             case 2 :
-                Serial.println("upper translation detected");
+                Serial.print(num_translation[2]);Serial.print(" ");Serial.println("upper translation detected");
+                num_translation[2]+=1;
                 break;
         }
     }
     else if (acc == 1) {
         switch(axis) {
             case 0 :
-                Serial.println("left translation detected");
+                Serial.print(num_translation[3]);Serial.print(" ");Serial.println("right translation detected");
+                num_translation[3]+=1;
                 break;
             case 1 :
-                Serial.println("forward translation detected");
+                Serial.print(num_translation[4]);Serial.print(" ");Serial.println("forward translation detected");
+                num_translation[4]+=1;
                 break;
             case 2 :
-                Serial.println("lower translation detected");
+                Serial.print(num_translation[5]);Serial.print(" ");Serial.println("lower translation detected");
+                num_translation[5]+=1;
                 break;
         }
     }
 }
 byte Handterpret::detect_rotation_mov(float av_gyro, float prev_av_gyro) {
     if (av_gyro >= prev_av_gyro + ROTATION_SENSIBILITY) {
-        /*Serial.print("Actual average : "); Serial.println(av_gyro);
-        Serial.print("Previous average : "); Serial.println(prev_av_gyro);
-        */
         return 2;
     }
     else if (av_gyro <= prev_av_gyro - ROTATION_SENSIBILITY) {
-        /*Serial.print("Actual average : "); Serial.println(av_gyro);
-        Serial.print("Previous average : "); Serial.println(prev_av_gyro);
-        */
-       return 1;
+        return 1;
     }
     else return 0;
 }
@@ -198,4 +204,17 @@ void Handterpret::display_speeds() {
         Serial.print(trans_speed[i]);Serial.print(tab);
     }
     Serial.println();
+}
+float Handterpret::filter_rot(float current_rot_av, float prev_rot_av, byte axis) {
+    if (current_rot_av >= 80 || current_rot_av <= -80) {
+        if ((current_rot_av < 0) == (prev_rot_av < 0)) {
+            return current_rot_av;
+        }
+        else if (prev_rot_av >= 80 || prev_rot_av <= -80 ){
+          Serial.println(current_rot_av);
+          return prev_rot_av;
+        }
+    }
+    else
+        return current_rot_av;
 }

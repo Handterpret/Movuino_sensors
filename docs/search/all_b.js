@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['update_32',['update',['../classHandterpret.html#a2b7cd673f8c29dd245fbc01c8c18d4d9',1,'Handterpret']]]
+  ['trans_5fspeed_32',['trans_speed',['../classHandterpret.html#a9d65abe0c65865edcca38a3322e67c95',1,'Handterpret']]],
+  ['trans_5fstate_33',['trans_state',['../classHandterpret.html#a7ac8a398707ef0cbb11109ad5aa0b51d',1,'Handterpret']]]
 ];
